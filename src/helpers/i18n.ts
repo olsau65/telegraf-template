@@ -4,7 +4,7 @@ const dirtyI18N = require('telegraf-i18n')
 
 export const i18n = new dirtyI18N({
   directory: `${__dirname}/../../locales`,
-  defaultLanguage: 'en',
+  defaultLanguage: 'ru',
   sessionName: 'session',
   useSession: false,
   allowMissing: false,
