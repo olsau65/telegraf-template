@@ -7,6 +7,6 @@ export function getMainMenu() {
     ['Обгон', 'Скорость', 'Ремень'],
     ['Грязный знак', 'Алкоголь'],
   ])
-    .oneTime(true)
+    .oneTime(false)
     .resize()
 }
