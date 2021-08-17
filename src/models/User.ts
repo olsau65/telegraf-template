@@ -4,8 +4,17 @@ export class User {
   @prop({ required: true, index: true, unique: true })
   id: number
 
+  @prop({ required: false })
+  username: string
+
+  @prop({ required: false })
+  name: string
+
   @prop({ required: true, default: 'en' })
   language: string
+
+  @prop({ required: false, default: new Date() })
+  lastActivity: Date
 }
 
 // Get User model
@@ -24,5 +33,9 @@ export async function findUser(id: number) {
       user = await UserModel.findOne({ id })
     }
   }
+
+  const filter = { id: id }
+  const update = { lastActivity: new Date() }
+  user = await UserModel.findOneAndUpdate(filter, update)
   return user
 }
