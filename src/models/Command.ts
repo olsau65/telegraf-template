@@ -30,3 +30,4 @@ export async function upCommandCounter(com_name: string) {
   const update = { counter: new_command.counter + 1 }
   return await CommandModel.findOneAndUpdate(filter, update)
 }
+// Test
