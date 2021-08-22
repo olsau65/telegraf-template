@@ -15,7 +15,7 @@ const CommandModel = getModelForClass(Command, {
 
 // Update command counter
 export async function upCommandCounter(com_name: string) {
-  console.log(com_name)
+  // console.log(com_name)
   let new_command = await CommandModel.findOne({ command_name: com_name })
 
   if (new_command == null) {
@@ -30,4 +30,3 @@ export async function upCommandCounter(com_name: string) {
   const update = { counter: new_command.counter + 1 }
   return await CommandModel.findOneAndUpdate(filter, update)
 }
-// Test
