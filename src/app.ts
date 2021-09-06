@@ -28,6 +28,8 @@ import { tintScene } from './handlers/tint'
 import { checkListScene } from './handlers/checkList'
 import { bribeScene } from './handlers/bribe'
 import { insuranceScene } from './handlers/insurance'
+import { screeningScene } from './handlers/screening'
+import { inspectionScene } from './handlers/inspection'
 
 // Middlewares
 bot.use(ignoreOldMessageUpdates)
@@ -48,7 +50,7 @@ bot.start((ctx) =>
 bot.command('help', sendHelp)
 bot.command('language', sendLanguage)
 
-bot.hears('Навигация >>', (ctx) => {
+bot.hears('Меню >>', (ctx) => {
   ctx.replyWithHTML(
     'Навигация по меню и ПДД',
     Markup.inlineKeyboard([
@@ -60,7 +62,7 @@ bot.hears('Навигация >>', (ctx) => {
     ])
   )
 })
-bot.hears('<< Навигация >>', (ctx) => {
+bot.hears('<< Меню >>', (ctx) => {
   ctx.replyWithHTML(
     'Навигация по меню и ПДД',
     Markup.inlineKeyboard([
@@ -73,7 +75,7 @@ bot.hears('<< Навигация >>', (ctx) => {
     ])
   )
 })
-bot.hears('<< Навигация', (ctx) => {
+bot.hears('<< Меню', (ctx) => {
   ctx.replyWithHTML(
     'Навигация по меню и ПДД',
     Markup.inlineKeyboard([
@@ -314,6 +316,22 @@ bot.hears('Взятка', (ctx) => {
   attachCommand('Взятка'),
     ctx.replyWithHTML(
       bribeScene(),
+      Markup.inlineKeyboard([Markup.button.callback('<< Назад', 'MainMenu1')])
+    )
+})
+
+bot.hears('Осмотр', (ctx) => {
+  attachCommand('Осмотр'),
+    ctx.replyWithHTML(
+      screeningScene(),
+      Markup.inlineKeyboard([Markup.button.callback('<< Назад', 'MainMenu1')])
+    )
+})
+
+bot.hears('Досмотр', (ctx) => {
+  attachCommand('Досмотр'),
+    ctx.replyWithHTML(
+      inspectionScene(),
       Markup.inlineKeyboard([Markup.button.callback('<< Назад', 'MainMenu1')])
     )
 })
