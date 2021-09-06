@@ -58,7 +58,7 @@ bot.hears('Меню >>', (ctx) => {
         'ПДД',
         'http://www.consultant.ru/document/cons_doc_LAW_2709/824c911000b3626674abf3ad6e38a6f04b8a7428/'
       ),
-      Markup.button.callback('Далее >>', 'MainMenu1'),
+      Markup.button.callback('На стр.2 >>', 'MainMenu1'),
     ])
   )
 })
@@ -66,12 +66,12 @@ bot.hears('<< Меню >>', (ctx) => {
   ctx.replyWithHTML(
     'Навигация по меню и ПДД',
     Markup.inlineKeyboard([
-      Markup.button.callback('<< Назад', 'MainMenu'),
+      Markup.button.callback('<< На стр.1', 'MainMenu'),
       Markup.button.url(
         'ПДД',
         'http://www.consultant.ru/document/cons_doc_LAW_2709/824c911000b3626674abf3ad6e38a6f04b8a7428/'
       ),
-      Markup.button.callback('Далее >>', 'MainMenu2'),
+      Markup.button.callback('На стр.3 >>', 'MainMenu2'),
     ])
   )
 })
@@ -79,7 +79,7 @@ bot.hears('<< Меню', (ctx) => {
   ctx.replyWithHTML(
     'Навигация по меню и ПДД',
     Markup.inlineKeyboard([
-      Markup.button.callback('<< Назад', 'MainMenu'),
+      Markup.button.callback('<< На стр.1', 'MainMenu'),
       Markup.button.url(
         'ПДД',
         'http://www.consultant.ru/document/cons_doc_LAW_2709/824c911000b3626674abf3ad6e38a6f04b8a7428/'
@@ -345,7 +345,7 @@ bot.action('MainMenu', (ctx) => {
         'ПДД',
         'http://www.consultant.ru/document/cons_doc_LAW_2709/824c911000b3626674abf3ad6e38a6f04b8a7428/'
       ),
-      Markup.button.callback('Далее >>', 'MainMenu1'),
+      Markup.button.callback('На стр.2 >>', 'MainMenu1'),
     ])
   )
   ctx.replyWithHTML('выбирайте нужный пункт в меню', getMainMenu())
@@ -354,12 +354,12 @@ bot.action('MainMenu1', (ctx) => {
   ctx.reply(
     'Главное меню стр.2',
     Markup.inlineKeyboard([
-      Markup.button.callback('<< Назад', 'MainMenu'),
+      Markup.button.callback('<< На стр.1', 'MainMenu'),
       Markup.button.url(
         'ПДД',
         'http://www.consultant.ru/document/cons_doc_LAW_2709/824c911000b3626674abf3ad6e38a6f04b8a7428/'
       ),
-      Markup.button.callback('Далее >>', 'MainMenu2'),
+      // Markup.button.callback('На стр.3 >>', 'MainMenu2'),
     ])
   )
   ctx.replyWithHTML('выбирайте нужный пункт в меню', getMainMenu1())
