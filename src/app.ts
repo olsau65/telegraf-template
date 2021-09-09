@@ -353,19 +353,21 @@ bot.action('MainMenu', (ctx) => {
 bot.action('MainMenu1', (ctx) => {
   ctx.reply(
     'Главное меню стр.2',
-    Markup.inlineKeyboard([
-      Markup.button.callback('<< На стр.1', 'MainMenu'),
-      Markup.button.url(
-        'ПДД',
-        'http://www.consultant.ru/document/cons_doc_LAW_2709/824c911000b3626674abf3ad6e38a6f04b8a7428/'
-      ),
-      Markup.button.url(
-        '☕️ Кофе разработчику',
-        'https://yoomoney.ru/to/41001424035652'
-      ),
-      // Markup.button.callback('На стр.3 >>', 'MainMenu2'),
-    ]
-    { columns: 2 }
+    Markup.inlineKeyboard(
+      [
+        Markup.button.callback('<< На стр.1', 'MainMenu'),
+        Markup.button.url(
+          'ПДД',
+          'http://www.consultant.ru/document/cons_doc_LAW_2709/824c911000b3626674abf3ad6e38a6f04b8a7428/'
+        ),
+        Markup.button.url(
+          '☕️ Кофе разработчику',
+          'https://yoomoney.ru/to/41001424035652'
+        ),
+        // Markup.button.callback('На стр.3 >>', 'MainMenu2'),
+      ],
+
+      { columns: 2 }
     )
   )
   ctx.replyWithHTML('выбирайте нужный пункт в меню', getMainMenu1())
