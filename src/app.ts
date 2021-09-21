@@ -30,6 +30,7 @@ import { bribeScene } from './handlers/bribe'
 import { insuranceScene } from './handlers/insurance'
 import { screeningScene } from './handlers/screening'
 import { inspectionScene } from './handlers/inspection'
+import { rememberScene } from './handlers/remember'
 
 // Middlewares
 bot.use(ignoreOldMessageUpdates)
@@ -333,6 +334,32 @@ bot.hears('Досмотр', (ctx) => {
     ctx.replyWithHTML(
       inspectionScene(),
       Markup.inlineKeyboard([Markup.button.callback('<< Назад', 'MainMenu1')])
+    )
+})
+
+bot.hears('Забыли документы', (ctx) => {
+  attachCommand('Забыли документы'),
+    ctx.replyWithHTML(
+      rememberScene(),
+      Markup.inlineKeyboard(
+        [
+          Markup.button.url(
+            'ст.12.3 КоАП',
+            'http://www.consultant.ru/document/cons_doc_LAW_34661/0486252c9b58867b61fbeadf42daad5e67b324f1/'
+          ),
+          Markup.button.url(
+            'ст.12.7 КоАП',
+            'http://www.consultant.ru/document/cons_doc_LAW_34661/86d85d3d522bb77876c524278464db710a481926/'
+          ),
+          Markup.button.url(
+            'ст.27.13 КоАП',
+            'http://www.consultant.ru/document/cons_doc_LAW_34661/73e48b1d556597db3d88d1648ea0486e7145b1de/'
+          ),
+          Markup.button.callback('<< Назад', 'MainMenu1'),
+        ],
+
+        { columns: 2 }
+      )
     )
 })
 
