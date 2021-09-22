@@ -31,6 +31,7 @@ import { insuranceScene } from './handlers/insurance'
 import { screeningScene } from './handlers/screening'
 import { inspectionScene } from './handlers/inspection'
 import { rememberScene } from './handlers/remember'
+import { roadsideScene } from './handlers/roadside'
 
 // Middlewares
 bot.use(ignoreOldMessageUpdates)
@@ -334,6 +335,32 @@ bot.hears('Досмотр', (ctx) => {
     ctx.replyWithHTML(
       inspectionScene(),
       Markup.inlineKeyboard([Markup.button.callback('<< Назад', 'MainMenu1')])
+    )
+})
+
+bot.hears('Обочина', (ctx) => {
+  attachCommand('Обочина'),
+    ctx.replyWithHTML(
+      roadsideScene(),
+      Markup.inlineKeyboard(
+        [
+          Markup.button.url(
+            'п.1.2 ПДД',
+            'http://www.consultant.ru/document/cons_doc_LAW_2709/5894b193fda5648afe1c1a5e70c028f25cd29099/'
+          ),
+          Markup.button.url(
+            'п.9.9 ПДД',
+            'http://www.consultant.ru/document/cons_doc_LAW_2709/d08dbb6ef3956314fd36b1d54a9393598f057acf/'
+          ),
+          Markup.button.url(
+            'п.8.8 ПДД',
+            'http://www.consultant.ru/document/cons_doc_LAW_34661/73e48b1d556597db3d88d1648ea0486e7145b1de/'
+          ),
+          Markup.button.callback('<< Назад', 'MainMenu1'),
+        ],
+
+        { columns: 2 }
+      )
     )
 })
 
