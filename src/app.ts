@@ -52,7 +52,7 @@ bot.start((ctx) =>
 )
 bot.command('help', sendHelp)
 bot.command('language', sendLanguage)
-bot.command('smgall', sendAll)
+// bot.command('smgall', sendAll)
 
 bot.hears('Меню >>', (ctx) => {
   ctx.replyWithHTML(
