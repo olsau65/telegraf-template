@@ -39,3 +39,11 @@ export async function findUser(id: number) {
   user = await UserModel.findOneAndUpdate(filter, update)
   return user
 }
+
+// Get all users
+export async function findAllUsers() {
+  // Empty `filter` means "match all documents"
+  const filter = {}
+  const all = await UserModel.find(filter)
+  return all
+}

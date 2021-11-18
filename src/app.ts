@@ -9,6 +9,7 @@ dotenv.config({ path: `${__dirname}/../.env` })
 import { bot } from '@/helpers/bot'
 import { ignoreOldMessageUpdates } from '@/middlewares/ignoreOldMessageUpdates'
 import { sendHelp } from '@/handlers/sendHelp'
+import { sendAll } from '@/handlers/sendAll'
 import { i18n, attachI18N } from '@/helpers/i18n'
 import { setLanguage, sendLanguage } from '@/handlers/language'
 import { getMainMenu, getMainMenu1 } from '@/handlers/mainMenu'
@@ -51,6 +52,7 @@ bot.start((ctx) =>
 )
 bot.command('help', sendHelp)
 bot.command('language', sendLanguage)
+bot.command('smgall', sendAll)
 
 bot.hears('Меню >>', (ctx) => {
   ctx.replyWithHTML(
