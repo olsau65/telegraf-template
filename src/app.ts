@@ -7,6 +7,8 @@ import * as dotenv from 'dotenv'
 dotenv.config({ path: `${__dirname}/../.env` })
 // Dependencies
 import { bot } from '@/helpers/bot'
+import { UserModel } from '@/models/User'
+import { findAllUsers } from '@/models'
 import { ignoreOldMessageUpdates } from '@/middlewares/ignoreOldMessageUpdates'
 import { sendHelp } from '@/handlers/sendHelp'
 import { sendAll } from '@/handlers/sendAll'
@@ -53,6 +55,10 @@ bot.start((ctx) =>
 bot.command('help', sendHelp)
 bot.command('language', sendLanguage)
 // bot.command('smgall', sendAll)
+bot.command('stats', async (ctx) => {
+  const all = await findAllUsers()
+  ctx.replyWithHTML('Amount of users: ' + String(all.length))
+})
 
 bot.hears('Меню >>', (ctx) => {
   ctx.replyWithHTML(

@@ -18,7 +18,7 @@ export class User {
 }
 
 // Get User model
-const UserModel = getModelForClass(User, {
+export const UserModel = getModelForClass(User, {
   schemaOptions: { timestamps: true },
 })
 
