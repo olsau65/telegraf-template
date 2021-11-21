@@ -8,7 +8,8 @@ dotenv.config({ path: `${__dirname}/../.env` })
 // Dependencies
 import { bot } from '@/helpers/bot'
 import { UserModel } from '@/models/User'
-import { findAllUsers } from '@/models'
+import { findAllUsers } from '@/models/User'
+import { findAllCommands } from '@/models/Command'
 import { ignoreOldMessageUpdates } from '@/middlewares/ignoreOldMessageUpdates'
 import { sendHelp } from '@/handlers/sendHelp'
 import { sendAll } from '@/handlers/sendAll'
@@ -56,8 +57,22 @@ bot.command('help', sendHelp)
 bot.command('language', sendLanguage)
 // bot.command('smgall', sendAll)
 bot.command('stats', async (ctx) => {
-  const all = await findAllUsers()
-  ctx.replyWithHTML('Amount of users: ' + String(all.length))
+  const all_users = await findAllUsers()
+  const all_commands = await findAllCommands()
+  ctx.replyWithHTML(
+    'Amount of users: ' +
+      String(all_users.length) +
+      '\n' +
+      'Amount of commands: ' +
+      String(all_commands.length) +
+      '\n' +
+      'Количество просмотров:'
+  )
+  all_commands.forEach(function (com_info) {
+    ctx.replyWithHTML(
+      String(com_info.command_name) + ': ' + String(com_info.counter)
+    )
+  })
 })
 
 bot.hears('Меню >>', (ctx) => {

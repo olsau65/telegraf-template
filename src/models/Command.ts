@@ -30,3 +30,11 @@ export async function upCommandCounter(com_name: string) {
   const update = { counter: new_command.counter + 1 }
   return await CommandModel.findOneAndUpdate(filter, update)
 }
+
+// Get all commands
+export async function findAllCommands() {
+  // Empty `filter` means "match all documents"
+  const filter = {}
+  const all_commands = await CommandModel.find(filter)
+  return all_commands
+}
