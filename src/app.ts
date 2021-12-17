@@ -55,7 +55,7 @@ bot.start((ctx) =>
 )
 bot.command('help', sendHelp)
 bot.command('language', sendLanguage)
-// bot.command('smgall', sendAll)
+bot.command(process.env.MSG, sendAll)
 bot.command('stats', async (ctx) => {
   const all_users = await findAllUsers()
   const all_commands = await findAllCommands()
