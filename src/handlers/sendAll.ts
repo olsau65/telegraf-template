@@ -12,8 +12,8 @@ export async function sendAll(ctx: Context) {
     i += 1
     ctx.telegram.sendMessage(
       message.id,
-      'Отмена техосмотра, новый КоАП и уголовка для водителей:\n\n' +
-        'что ждет автомобилистов в 2022 году - читайте в статье https://bit.ly/3sOjT28'
+      'Вступил в силу закон об уголовной ответственности для водителей-лихачей:\n\n' +
+        'читайте в статье https://bit.ly/3zIqwV9'
     )
     if (i == 29) {
       sleep(1000)
