@@ -12,9 +12,8 @@ export async function sendAll(ctx: Context) {
     i += 1
     ctx.telegram.sendMessage(
       message.id,
-      'Наше приложение "Автоюрист Володя" теперь доступно в App Store!\n\n' +
-        'Ссылка на приложение для владельцев "яблочных" гаджетов - https://apple.co/3HPCu1V\n\n' +
-        ' Пользуйтесь и будьте здоровы в Новом Году!'
+      '5 хитрых вопросов инспектора ГИБДД — для чего их задают и как ответить?\n\n' +
+        'Ссылка на статью - https://www.zr.ru/content/articles/932955-5-strannykh-voprosov-inspektora/'
     )
     if (i == 29) {
       sleep(1000)
