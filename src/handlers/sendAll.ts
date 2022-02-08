@@ -12,8 +12,8 @@ export async function sendAll(ctx: Context) {
     i += 1
     ctx.telegram.sendMessage(
       message.id,
-      '5 хитрых вопросов инспектора ГИБДД — для чего их задают и как ответить?\n\n' +
-        'Ссылка на статью - https://www.zr.ru/content/articles/932955-5-strannykh-voprosov-inspektora/'
+      'Новые штрафы ГИБДД для водителей вступают в силу в РФ с 1 марта 2022 года\n\n' +
+        'Ссылка на статью - https://avtonovostidnya.ru/transport/267768'
     )
     if (i == 29) {
       sleep(1000)
