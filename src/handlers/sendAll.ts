@@ -12,8 +12,8 @@ export async function sendAll(ctx: Context) {
     i += 1
     ctx.telegram.sendMessage(
       message.id,
-      'Новые штрафы ГИБДД для водителей вступают в силу в РФ с 1 марта 2022 года\n\n' +
-        'Ссылка на статью - https://avtonovostidnya.ru/transport/267768'
+      'В ГИБДД рассказали об основаниях для проверки водителя на состояние опьянения и уровне промилле\n\n' +
+        'Ссылка на статью - https://www.autonews.ru/news/6203d5089a794706b0276509'
     )
     if (i == 29) {
       sleep(1000)

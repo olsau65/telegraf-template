@@ -1,25 +1,27 @@
-# Telegram bot template based on telegraf.js.org
+# Telegram bot «Володя, что делать? Остановили ДПС»
 
-Please, enjoy this starter template for Telegram bots based on telegraf.js.org. It includes most common middlewares used by me, MongoDB integration, language picker and internationalization and shows basic encapsulation techniques used by me.
+Бот-помощник для водителей в ситуациях, когда их останавливают инспектора ДПС.
+Согласитесь для многих – не только начинающих водителей – это почти всегда стресс. А в стрессовых ситуациях бывает, что даже то, что хорошо знаешь зачастую забываешь. А если не знаешь, то вообще беда …
 
-# Installation and local launch
+На самом деле, ситуаций когда вас может остановить инспектор не так уж и много.
+Поэтому мы постарались разложить их «по полочкам» - как себя вести в той или иной ситуации, конечно, со ссылками на нормативную базу.
 
-1. Clone this repo: `git clone https://github.com/backmeupplz/telegraf-template`
-2. Launch the [mongo database](https://www.mongodb.com/) locally
-3. Create `.env` with the environment variables listed below
-4. Run `yarn install` in the root folder
-5. Run `yarn develop`
+# Сейчас в приложении самые «ходовые» пункты:
 
-And you should be good to go! Feel free to fork and submit pull requests. Thanks!
+- Обязанности инспектора,
+- Ваши права,
+- Нарушения инспектора,
+- Протокол,
+- Обгон,
+- Скорость,
+- Пешеход,
+- Алкоголь,
+- Тонировка,
+- Техосмотр,
+- ОСАГО,
+- Осмотр,
+- Досмотр,
+- и другие.
 
-# Environment variables
-
-- `TOKEN` — Telegram bot token
-- `MONGO`— URL of the mongo database
-- `MSG`— command for send message to all users of bot
-
-Also, please, consider looking at `.env.sample`.
-
-# License
-
-MIT — use for any purpose. Would be great if you could leave a note about the original developers. Thanks!
+Будем дополнять приложение новыми пунктами. Есть отзывы от пользователей, кому наше приложение помогло на дорогах.
+Пользуйтесь на здоровье. Пишите свои предложения и замечания. Рекомендуйте своим друзьям и знакомым.
